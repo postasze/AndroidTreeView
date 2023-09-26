@@ -1,13 +1,19 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion Integer.parseInt(project.ANDROID_BUILD_SDK_VERSION)
-    buildToolsVersion project.ANDROID_BUILD_TOOLS_VERSION
+    namespace "com.unnamed.b.atv.sample"
+//    compileSdkVersion Integer.parseInt(project.ANDROID_BUILD_SDK_VERSION)
+//    buildToolsVersion project.ANDROID_BUILD_TOOLS_VERSION
 
     defaultConfig {
         applicationId "com.unnamed.b.atv.demo"
         minSdkVersion Integer.parseInt(project.ANDROID_BUILD_MIN_SDK_VERSION)
         targetSdkVersion Integer.parseInt(project.ANDROID_BUILD_TARGET_SDK_VERSION)
+        compileSdk Integer.parseInt(project.ANDROID_BUILD_SDK_VERSION)
+        buildToolsVersion = project.ANDROID_BUILD_TOOLS_VERSION
+//        minSdkVersion 11
+//        targetSdkVersion 31
+        versionName project.VERSION_NAME
         versionName project.VERSION_NAME
         versionCode Integer.parseInt(project.VERSION_CODE)
     }
@@ -19,8 +25,11 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:appcompat-v7:21.0.3'
-    compile 'com.github.johnkil.print:print:1.2.2'
-    compile project(':library')
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+//    compile 'com.android.support:appcompat-v7:21.0.3'
+    implementation 'com.android.support:appcompat-v7:21.0.3'
+//    compile 'com.github.johnkil.print:print:1.2.2'
+    implementation 'com.github.johnkil.print:print:1.2.2'
+//    implementation 'com.github.bmelnychuk:atv:1.2.+'
+    implementation project(':library')
 }

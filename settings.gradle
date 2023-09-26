@@ -1,1 +1,4 @@
-include ':app', ':library'
+rootProject.name = "Android Tree View Demo Library"
+
+include 'app'
+include 'library'
