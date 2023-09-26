@@ -89,15 +89,19 @@ public class FolderStructureFragment extends Fragment {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.expandAll:
-                tView.expandAll();
-                break;
-
-            case R.id.collapseAll:
-                tView.collapseAll();
-                break;
-        }
+//        switch (item.getItemId()) {
+//            case R.id.expandAll:
+//                tView.expandAll();
+//                break;
+//
+//            case R.id.collapseAll:
+//                tView.collapseAll();
+//                break;
+//        }
+        if(item.getItemId() == R.id.expandAll)
+            tView.expandAll();
+        else if(item.getItemId() == R.id.collapseAll)
+            tView.collapseAll();
         return true;
     }
 
