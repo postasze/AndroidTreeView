@@ -5,6 +5,7 @@ AndroidTreeView
 
 ### Recent changes
 
+Update of build gradle scripts to version 8.1.0 so that Android Tree View Sample demo and library get compiled and work in Android Studio 2022.3.1 and emulators like Galaxy Nexus API 29
 
 2D scrolling mode added, keep in mind this comes with few limitations: you won't be able not place views on right side like alignParentRight. Everything should be align left. Is not enabled by default
 
