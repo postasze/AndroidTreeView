@@ -20,15 +20,12 @@ import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 
-
 public class MainActivity extends ActionBarActivity {
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
 
         final LinkedHashMap<String, Class<?>> listItems = new LinkedHashMap<>();
         listItems.put("Folder Structure Example", FolderStructureFragment.class);
@@ -36,7 +33,6 @@ public class MainActivity extends ActionBarActivity {
         listItems.put("Selectable Nodes", SelectableTreeFragment.class);
         listItems.put("2d scrolling", TwoDScrollingFragment.class);
         listItems.put("Expand with arrow only", TwoDScrollingArrowExpandFragment.class);
-
 
         final List<String> list = new ArrayList(listItems.keySet());
         final ListView listview = (ListView) findViewById(R.id.listview);
@@ -51,9 +47,10 @@ public class MainActivity extends ActionBarActivity {
                 MainActivity.this.startActivity(i);
             }
         });
-
     }
 
+    // this class is unnecessary and exists only to make construction 
+    // of ArrayAdapter shorter with fewer parameters
     private class SimpleArrayAdapter extends ArrayAdapter<String> {
         public SimpleArrayAdapter(Context context, List<String> objects) {
             super(context, android.R.layout.simple_list_item_1, objects);
